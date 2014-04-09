@@ -139,7 +139,7 @@ class RectanglePacker
 	 * @param index
 	 * @return
 	 */
-	public function getRectangleId(index:Int):Int
+	public inline function getRectangleId(index:Int):Int
 	{
 		var inserted:IntegerRectangle = mInsertedRectangles[index];
 		return inserted.id;
@@ -152,7 +152,7 @@ class RectanglePacker
 	 * @id the identifier for this rectangle
 	 * @return true if inserted successfully
 	 */
-	public function insertRectangle(width:Int, height:Int, id:Int):Void
+	public inline function insertRectangle(width:Int, height:Int, id:Int):Void
 	{
 		var sortableSize:SortableSize = allocateSize(width, height, id);
 		mInsertList.push(sortableSize);
@@ -431,7 +431,7 @@ class RectanglePacker
 	 * Pushes the freed rectangle to rectangle stack. Make sure not to push same rectangle twice!
 	 * @param rectangle
 	 */
-	private function freeRectangle(rectangle:IntegerRectangle):Void
+	private inline function freeRectangle(rectangle:IntegerRectangle):Void
 	{
 		//mRectangleStack[mRectangleStack.length] = rectangle;
 		mRectangleStack.push(rectangle);
@@ -463,7 +463,7 @@ class RectanglePacker
 	 * Pushes the freed sortable size to size stack. Make sure not to push same size twice!
 	 * @param size
 	 */
-	private function freeSize(size:SortableSize):Void
+	private inline function freeSize(size:SortableSize):Void
 	{
 		//mSortableSizeStack[mSortableSizeStack.length] = size;
 		mSortableSizeStack.push(size);
